@@ -7,7 +7,7 @@ export default class First extends Component {
   constructor(props){
     super(props)
   }
-  reverseMode = () => this.props.reverse === true ? 'reverse' : 'row'
+  reverseMode = () => this.props.reverse ? 'reverse' : 'row'
   render() {
     const {img, h3, h2, p} = this.props.block
     return (

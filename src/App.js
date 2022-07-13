@@ -22,11 +22,11 @@ function App() {
       <div className="container">
         <h2>How the app works</h2>
         <First block={firstBlock} />
-        <First block={secondBlock} reverse={true} />
+        <First block={secondBlock} reverse />
       </div>
       <div className="container second">
         <Second start={10} step={2} />
-        <Second start={20} step={5} />
+        <Second start={20} step={3} />
       </div>
     </>
   );

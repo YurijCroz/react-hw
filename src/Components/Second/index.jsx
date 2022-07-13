@@ -9,12 +9,14 @@ export default class Second extends Component {
     this.state = { value: this.props.start}
   }
   countPlus = () => {
-    this.setState(prevState => ({value: prevState.value + this.props.step}))
+    this.setState((state, props) => ({value: state.value + props.step}))
   }
   countMinus = () => {
-    this.setState(prevState => ({value: prevState.value - this.props.step}))
+    //if(this.state.value <= 0) {return}
+    this.setState(state => ({value: state.value - this.props.step}))
   }
   render() {
+    //if(this.state.value < 0) this.state.value = 0;
     return (
       <div className='counter'>
         <h2>Value: <span>{this.state.value}</span></h2>
