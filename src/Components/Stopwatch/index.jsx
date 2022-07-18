@@ -31,9 +31,6 @@ export default class Stopwatch extends Component {
     : this.timerId = setInterval(this.next, 1000);
   }
   reset = () => {
-/*     this.props.countdown
-    ? this.setState({time: this.props.value})
-    : this.setState({time: 0}); */
     this.setState({time: this.value})
     this.start();
   }
