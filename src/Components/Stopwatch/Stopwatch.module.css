@@ -1,0 +1,16 @@
+
+.stopwatch_container {
+    height: 500px;
+    width: 350px;
+    background-color: beige;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+
+.stopwatch_container h1 {
+    font-size: 30px;
+}
