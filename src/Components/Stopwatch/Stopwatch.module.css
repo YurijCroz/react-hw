@@ -11,12 +11,15 @@
     margin: 10px;
 }
 
-.stopwatch_container h1 {
+.stopwatch_container h1, h3{
     font-size: 30px;
     font-family: 'Press Start 2P';
+    text-transform: uppercase;
+    user-select: none;
 }
 
 .text_cover {
+    height: 85px;
     background-color: brown;
     padding: 10px;
     color: aliceblue;
@@ -24,8 +27,20 @@
 }
 
 .text_uncover {
+    height: 85px;
     background-color: brown;
     padding: 10px;
     color: aliceblue;
     transition: 500ms;
+    text-align: center;
+}
+
+.text_uncover h3 {
+    margin: 20px 0px 0px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.text_uncover h3:hover {
+    color: darkgray;
 }

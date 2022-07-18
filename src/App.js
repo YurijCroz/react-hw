@@ -26,6 +26,7 @@ function App() {
         <Stopwatch value={5} />
         <Stopwatch value={100} countdown/>
         <Stopwatch/>
+        <Stopwatch countdown/>
       </div>
     </>
   );

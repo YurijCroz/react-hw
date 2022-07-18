@@ -9,9 +9,11 @@ export default class Stopwatch extends Component {
     this.state = {
       time: this.props.countdown ? this.props.value : 0,
       finish: this.props.countdown ? 0 : this.props.value,
+      value: this.props.value
     };
     this.timerId = null;
-    this.timeFormat = require('hh-mm-ss')
+    this.timeFormat = require('hh-mm-ss');
+    this.value = this.state.time
   }
   next = () => {
     this.setState({time: this.state.time + 1})
@@ -27,6 +29,13 @@ export default class Stopwatch extends Component {
     this.props.countdown
     ? this.timerId = setInterval(this.prev, 1000)
     : this.timerId = setInterval(this.next, 1000);
+  }
+  reset = () => {
+/*     this.props.countdown
+    ? this.setState({time: this.props.value})
+    : this.setState({time: 0}); */
+    this.setState({time: this.value})
+    this.start();
   }
   componentDidMount(){
     this.start();
@@ -46,7 +55,10 @@ export default class Stopwatch extends Component {
     return (
       <section className={styles.stopwatch_container}>
         <h1>{displayTime}</h1>
-        <h1 className={time === finish ? styles.text_uncover : styles.text_cover}>Game Over</h1>
+        <div className={time === finish ? styles.text_uncover : styles.text_cover}>
+          <h1>Game Over</h1>
+          <h3 onClick={this.reset}>Press to Continue</h3>
+        </div>
       </section>
     )
   }
