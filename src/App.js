@@ -24,7 +24,8 @@ function App() {
     <>
       <div className="container second">
         <Stopwatch value={5} />
-        <Stopwatch value={5} countdown/>
+        <Stopwatch value={100} countdown/>
+        <Stopwatch/>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 
 .stopwatch_container {
-    height: 500px;
+    height: 350px;
     width: 350px;
     background-color: beige;
     border-radius: 10px;
@@ -13,4 +13,19 @@
 
 .stopwatch_container h1 {
     font-size: 30px;
+    font-family: 'Press Start 2P';
+}
+
+.text_cover {
+    background-color: brown;
+    padding: 10px;
+    color: aliceblue;
+    opacity: 0;
+}
+
+.text_uncover {
+    background-color: brown;
+    padding: 10px;
+    color: aliceblue;
+    transition: 500ms;
 }
