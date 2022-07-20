@@ -1,6 +1,7 @@
 import First from "./Components/First";
 import Second from "./Components/Second";
 import Stopwatch from "./Components/Stopwatch";
+import Calendar from "./Components/Calendar";
 import './App.css';
 
 /* 
@@ -27,6 +28,10 @@ function App() {
         <Stopwatch value={100} countdown/>
         <Stopwatch/>
         <Stopwatch countdown/>
+      </div>
+      <div className="container second">
+        <Calendar />
+        <Calendar day={new Date(2022, 1, 10)}/>
       </div>
     </>
   );

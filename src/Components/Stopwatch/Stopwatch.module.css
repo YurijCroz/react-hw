@@ -11,7 +11,7 @@
     margin: 10px;
 }
 
-.stopwatch_container h1, h3{
+.stopwatch_container h1, .text_uncover h3{
     font-size: 30px;
     font-family: 'Press Start 2P';
     text-transform: uppercase;

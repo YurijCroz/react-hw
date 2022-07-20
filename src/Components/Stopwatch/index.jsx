@@ -1,7 +1,8 @@
 'use strict'
 import React, { Component } from 'react';
 import styles from './Stopwatch.module.css';
-import require from "hh-mm-ss"
+import PropTypes from 'prop-types';
+const timeFormat = require('hh-mm-ss');
 
 export default class Stopwatch extends Component {
   constructor(props) {
@@ -12,7 +13,6 @@ export default class Stopwatch extends Component {
       value: this.props.value
     };
     this.timerId = null;
-    this.timeFormat = require('hh-mm-ss');
     this.value = this.state.time
   }
   next = () => {
@@ -48,7 +48,7 @@ export default class Stopwatch extends Component {
   }
   render() {
     const {time, finish} = this.state;
-    const displayTime = this.timeFormat.fromS(time, 'hh:mm:ss')
+    const displayTime = timeFormat.fromS(time, 'hh:mm:ss')
     return (
       <section className={styles.stopwatch_container}>
         <h1>{displayTime}</h1>
@@ -59,6 +59,10 @@ export default class Stopwatch extends Component {
       </section>
     )
   }
+}
+
+Stopwatch.propTypes = {
+  value: PropTypes.number
 }
 
 Stopwatch.defaultProps = {
