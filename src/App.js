@@ -31,7 +31,7 @@ function App() {
       </div>
       <div className="container second">
         <Calendar />
-        <Calendar day={new Date(2022, 1, 10)}/>
+        <Calendar day={new Date(2022, 1, 11)}/>
       </div>
     </>
   );

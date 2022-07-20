@@ -22,3 +22,4 @@ export function getMonthData(daysInMonth, startOfMonth) {
     }
     return monthData
 }
+

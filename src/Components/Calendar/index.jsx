@@ -11,8 +11,6 @@ export default class Calendar extends Component {
   static defaultProps = {
     weekDayNames: addon.WEEK_DAY_NAMES,
     day: new Date(),
-/*     daysInMonth: getDaysInMonth(new Date()),
-    startOfMonth: startOfMonth(new Date()) */
   }
   constructor(props){
     super(props);
@@ -37,7 +35,7 @@ export default class Calendar extends Component {
         {monthData.map((week, index) => 
           <section className='calendar__line' key={index}>
             {week.map((date, index) => 
-              <div className={`calendar__day-week ${date == today ? 'calendar__today': 'test'}`} key={index}>
+              <div className={classnames('calendar__day-week', {'calendar__today': date == today})} key={index}>
                 {!undefined ? date : ''}
               </div>
             )}
