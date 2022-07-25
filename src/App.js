@@ -2,7 +2,19 @@ import First from "./Components/First";
 import Second from "./Components/Second";
 import Stopwatch from "./Components/Stopwatch";
 import Calendar from "./Components/Calendar";
+import Managed from "./Components/Managed";
 import './App.css';
+
+
+function App() {
+  return (
+    <article className="container">
+      <Managed/>
+    </article>
+  );
+}
+
+export default App;
 
 /* 
 const firstBlock = {
@@ -20,25 +32,6 @@ const secondBlock = {
 }
  */
 
-function App() {
-  return (
-    <>
-      <div className="container second">
-        <Stopwatch value={5} />
-        <Stopwatch value={100} countdown/>
-        <Stopwatch/>
-        <Stopwatch countdown/>
-      </div>
-      <div className="container second">
-        <Calendar />
-        <Calendar day={new Date(2022, 1, 11)}/>
-      </div>
-    </>
-  );
-}
-
-export default App;
-
 /* 
 <div className="container">
 <h2>How the app works</h2>
@@ -48,5 +41,18 @@ export default App;
 <div className="container second">
 <Second start={10} step={2} />
 <Second start={20} step={3} />
+</div>
+ */
+
+/* 
+<div className="container second">
+<Stopwatch value={5} />
+<Stopwatch value={100} countdown/>
+<Stopwatch/>
+<Stopwatch countdown/>
+</div>
+<div className="container second">
+<Calendar />
+<Calendar day={new Date(2022, 1, 11)}/>
 </div>
  */

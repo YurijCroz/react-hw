@@ -41,6 +41,10 @@
     user-select: none;
 }
 
+.calendar__day-week:empty {
+    opacity: 0;
+}
+
 .calendar__day-week:nth-child(1), .calendar__day-week:nth-child(7) {
     color: red;
 }
