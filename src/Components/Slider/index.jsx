@@ -11,14 +11,16 @@ export default function Slider(props) {
   const {images} = props;
   const [currentImgId, setCurrentImgId] = useState(0);
   const setPrevSlide = () => {
-    currentImgId <= 0 
-    ? setCurrentImgId(images.length-1)
-    : setCurrentImgId(currentImgId -1);
+    setCurrentImgId(currentImgId => {
+      const prev = currentImgId <= 0 ? images.length - 1 : currentImgId - 1
+      return prev
+  })
   }
   const setNextSlide = () => {
-    currentImgId >= images.length-1
-    ? setCurrentImgId(0)
-    : setCurrentImgId(currentImgId +1);
+    setCurrentImgId(currentImgId => {
+      const next = currentImgId === images.length - 1 ? 0 : currentImgId + 1
+      return next
+  })
   }
   return (
     <div className={styles.container}>

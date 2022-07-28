@@ -6,26 +6,26 @@ import PropTypes from 'prop-types';
 
 
 export default function Controller(props) {
-  const {setPrevSlide, setNextSlide, handle} = props;
+  const {setPrevSlide, setNextSlide} = props;
   const [isRunning, setIsRunning] = useState(false);
   const [slideShowId, setSlideShowId] = useState(null);
   const [delay, setDelay] = useState(1000);
   const start = () => {
-    setIsRunning(true);
+    if(!isRunning){
+      setIsRunning(true);
+      setSlideShowId(setInterval(setNextSlide, delay));
+    }
   }
   const stop = () => {
-    setIsRunning(false);
-    clearInterval(setSlideShowId);
-    setSlideShowId(null);
+    if(isRunning){
+      setIsRunning(false);
+      setSlideShowId(null);
+      return ()=> clearInterval(setSlideShowId);
+    }
   }
   const delayHandler = (e) => {
-    setDelay(e.target.value);
+    setDelay(Number(e.target.value));
   }
-  useEffect (()=> {
-    if(isRunning === true) {
-      setSlideShowId(setInterval(setNextSlide, delay))
-    } else return
-  }, [delay, isRunning, setSlideShowId])
   return (
     <div className={styles.container}>
       <div className={styles.container__navigation}>
@@ -62,4 +62,17 @@ const stop = () => {
     setIsRunning(false);
     setSlideShowId(null);
   }
+} */
+
+
+/* const start = () => {
+  setSlideShowId(setInterval(() => {
+    setNextSlide()
+  }, delay))
+}
+const stop = () => {
+  setSlideShowId(clearInterval(() => {
+    setCurrentImgId(currentImgId)
+  }))
+  setSlideShowId(null);
 } */
