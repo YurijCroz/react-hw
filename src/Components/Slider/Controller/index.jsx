@@ -4,7 +4,6 @@ import React, {useState, useEffect} from 'react';
 import styles from './Controller.module.scss';
 import PropTypes from 'prop-types';
 
-
 export default function Controller(props) {
   const {setPrevSlide, setNextSlide} = props;
   const [isRunning, setIsRunning] = useState(false);
@@ -20,7 +19,7 @@ export default function Controller(props) {
     if(isRunning){
       setIsRunning(false);
       setSlideShowId(null);
-      return ()=> clearInterval(setSlideShowId);
+      clearInterval(slideShowId);
     }
   }
   const delayHandler = (e) => {
@@ -49,30 +48,3 @@ Controller.propTypes = {
   setPrevSlide: PropTypes.func.isRequired,
   setNextSlide: PropTypes.func.isRequired
 }
-
-/* const start = () => {
-  if(!isRunning){
-    setIsRunning(true);
-    setSlideShowId(setInterval(nextSlide, delay));
-  }
-}
-const stop = () => {
-  if(isRunning){
-    clearInterval(setSlideShowId);
-    setIsRunning(false);
-    setSlideShowId(null);
-  }
-} */
-
-
-/* const start = () => {
-  setSlideShowId(setInterval(() => {
-    setNextSlide()
-  }, delay))
-}
-const stop = () => {
-  setSlideShowId(clearInterval(() => {
-    setCurrentImgId(currentImgId)
-  }))
-  setSlideShowId(null);
-} */
