@@ -1,16 +1,24 @@
+'use strict'
 import First from "./Components/First";
 import Second from "./Components/Second";
 import Stopwatch from "./Components/Stopwatch";
 import Calendar from "./Components/Calendar";
 import Managed from "./Components/Managed";
-import './App.css';
+import Slider from "./Components/Slider";
+import './App.scss';
+import images from "./test/images.json"
 
 
 function App() {
   return (
-    <article className="container">
-      <Managed/>
-    </article>
+    <>
+      <article className="container">
+        <Managed/>
+      </article>
+      <article className="container">
+        <Slider images={images}/>
+      </article>
+    </>
   );
 }
 

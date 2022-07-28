@@ -1,0 +1,18 @@
+
+
+.container{
+    &__navigation{
+        & > button{
+            width: 60px;
+            height: 30px;
+            margin: 10px;
+        }
+    }
+    &__worked{
+        & > button{
+            width: 60px;
+            height: 30px;
+            margin: 10px;
+        }
+    }
+}

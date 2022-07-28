@@ -27,6 +27,46 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
     background-color: #377dff
 }
 
+.my-component {
+    background: #fff;
+}
+
+.fullscreen{
+    & button{
+        display: none;
+    }
+}
+
+.fullscreen-enabled {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0);
+    &__div{
+        width: 50vw;
+        height: 50vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    & img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    & button{
+        width: 50px;
+        height: 50px;
+        display: block;
+        position: absolute;
+        top: -60px;
+        right: -60px;
+    }
+}
+
 /* 
 .container {
     width: 100%;
