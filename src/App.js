@@ -5,6 +5,7 @@ import Stopwatch from "./Components/Stopwatch";
 import Calendar from "./Components/Calendar";
 import Managed from "./Components/Managed";
 import Slider from "./Components/Slider";
+import RandomCards from "./Components/RandomCards";
 import './App.scss';
 import images from "./test/images.json"
 
@@ -12,12 +13,7 @@ import images from "./test/images.json"
 function App() {
   return (
     <>
-      <article className="container">
-        <Managed/>
-      </article>
-      <article className="container">
-        <Slider images={images}/>
-      </article>
+      <RandomCards/>
     </>
   );
 }
@@ -63,4 +59,13 @@ const secondBlock = {
 <Calendar />
 <Calendar day={new Date(2022, 1, 11)}/>
 </div>
+ */
+
+/* 
+<article className="container">
+<Managed/>
+</article>
+<article className="container">
+<Slider images={images}/>
+</article>
  */
