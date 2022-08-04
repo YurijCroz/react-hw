@@ -1,21 +1,19 @@
 
 
 .card{
-    width: 400px;
-    height: 600px;
-    border: 1px solid black;
+    width: 500px;
+    height: 500px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     box-shadow: 6px 14px 15px 5px #000000;
     &__header{
-        height: 25%;
+        height: 35%;
         width: inherit;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: cornflowerblue;
         border-bottom: 1px solid black;
         &_avatar{
             width: 128px;
@@ -24,18 +22,54 @@
         }
     }
     &__info{
-        height: 75%;
-        padding: 10px;
+        height: 65%;
+        padding: 10px 5px 0px 5px;
         width: inherit;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-evenly;
+        justify-content: space-between;
+        text-align: center;
+        &_nav{
+            height: 25%;
+            width: inherit;
+            padding: 0px 5px 0px 5px;
+            border-top: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            & button{
+                border: 2px solid rgb(83, 136, 233);
+                background-color: rgb(83, 136, 233);
+                border-radius: 20%;
+                height: 60px;
+                width: 60px;
+                transition: 200ms;
+            }
+        }
     }
     & h2{
-        font-size: 32px;
+        font-size: 36px;
     }
     & h3{
-        font-size: 18px;
+        font-size: 24px;
     }
+}
+
+.male{
+    background-color: cornflowerblue;
+}
+
+.female{
+    background-color: pink;
+}
+
+.active{
+    font-size: 38px;
+    color: red;
+}
+
+.deactive{
+    font-size: 35px;
+    color: brown;
 }
