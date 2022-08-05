@@ -1,5 +1,4 @@
 
-'use strict';
 import React, {useState, useEffect} from 'react';
 import RandomCard from './RandomCard';
 import scss from './RandomCards.module.scss';
@@ -27,8 +26,8 @@ export default function RandomCards() {
     const getData = async () => {
       const response = await fetch("https://randomuser.me/api/?results=20")
         .then(res=>res.json())
-        .then(data=>setUsers(data.results))
         .catch(rej=>rej);
+      setUsers(response.results);
       setIsFetching(false);
     }
     if(isFetching){
