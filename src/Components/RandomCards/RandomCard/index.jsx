@@ -10,26 +10,28 @@ export default function RandomCard(props) {
   const {users, count} = props;
   const user = users[count];
   const [infoText, setInfoText] = useState();
-  const [buttonClickIndex, setButtonClickIndex] = useState();
+  const [buttonClickID, setButtonClickID] = useState();
 
-  const buttonClickHandler = (i) => buttonClickIndex===i ? scss.active : scss.deactive;
+  const buttonClickHandlerStyle = (i) => buttonClickID===i ? scss.active : scss.deactive;
+
+  const buttonClickHandlerID = (id) => buttonClickID === id ? setButtonClickID(0) : setButtonClickID(id);
 
   useEffect(()=> {
-    if(buttonClickIndex===1){
+    if(buttonClickID===1){
       setInfoText(`phone number: ${user.phone}`);
     } else
-    if(buttonClickIndex===2){
+    if(buttonClickID===2){
       setInfoText(`email: ${user.email}`);
     } else
-    if(buttonClickIndex===3){
+    if(buttonClickID===3){
       setInfoText(`Location: ${user.location.country} ${user.location.state}`);
     } else 
-    if(buttonClickIndex===4){
+    if(buttonClickID===4){
       setInfoText(`Date of Birth: ${format(new Date(user.dob.date), 'P')} age: ${user.dob.age}`);
     } else {
       setInfoText();
     }
-  },[buttonClickIndex, setInfoText, user]);
+  },[buttonClickID, setInfoText, user]);
 
   return (
     <article className={scss.card}>
@@ -40,10 +42,10 @@ export default function RandomCard(props) {
         <h2>{`${user.name.first} ${user.name.last}`}</h2>
         <h3>{infoText}</h3>
         <section className={classnames(scss.card__info_nav, user.gender==='male' ? scss.male : scss.female)}>
-          <button className={classnames(buttonClickHandler(1))} onClick={()=>buttonClickIndex === 1 ? setButtonClickIndex(0) : setButtonClickIndex(1)}><FontAwesomeIcon icon={faPhone} /></button>
-          <button className={classnames(buttonClickHandler(2))} onClick={()=>buttonClickIndex === 2 ? setButtonClickIndex(0) : setButtonClickIndex(2)}><FontAwesomeIcon icon={faEnvelope} /></button>
-          <button className={classnames(buttonClickHandler(3))} onClick={()=>buttonClickIndex === 3 ? setButtonClickIndex(0) : setButtonClickIndex(3)}><FontAwesomeIcon icon={faMapLocationDot} /></button>
-          <button className={classnames(buttonClickHandler(4))} onClick={()=>buttonClickIndex === 4 ? setButtonClickIndex(0) : setButtonClickIndex(4)}><FontAwesomeIcon icon={faCakeCandles} /></button>
+          <button className={classnames(buttonClickHandlerStyle(1))} onClick={()=>buttonClickHandlerID(1)}><FontAwesomeIcon icon={faPhone} /></button>
+          <button className={classnames(buttonClickHandlerStyle(2))} onClick={()=>buttonClickHandlerID(2)}><FontAwesomeIcon icon={faEnvelope} /></button>
+          <button className={classnames(buttonClickHandlerStyle(3))} onClick={()=>buttonClickHandlerID(3)}><FontAwesomeIcon icon={faMapLocationDot} /></button>
+          <button className={classnames(buttonClickHandlerStyle(4))} onClick={()=>buttonClickHandlerID(4)}><FontAwesomeIcon icon={faCakeCandles} /></button>
         </section>
       </section>
     </article>
